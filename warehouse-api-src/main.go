@@ -3,10 +3,10 @@ package main
 import (
 	"net/http"
 
-	"github.com/tolikcode/warehouse-api/articles"
 	"github.com/tolikcode/warehouse-api/db"
 	"github.com/tolikcode/warehouse-api/docs"
-	"github.com/tolikcode/warehouse-api/products"
+	"github.com/tolikcode/warehouse-api/features/articles"
+	"github.com/tolikcode/warehouse-api/features/products"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"

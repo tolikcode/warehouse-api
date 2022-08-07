@@ -1,7 +1,7 @@
 package products
 
 import (
-	"github.com/tolikcode/warehouse-api/articles"
+	"github.com/tolikcode/warehouse-api/features/articles"
 
 	"github.com/google/uuid"
 )

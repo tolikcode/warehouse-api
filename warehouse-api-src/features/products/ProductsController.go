@@ -5,8 +5,8 @@ import (
 	"math"
 	"net/http"
 
-	"github.com/tolikcode/warehouse-api/articles"
 	"github.com/tolikcode/warehouse-api/db"
+	"github.com/tolikcode/warehouse-api/features/articles"
 	"github.com/tolikcode/warehouse-api/utils"
 
 	"gorm.io/gorm"

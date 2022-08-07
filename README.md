@@ -14,6 +14,8 @@ Backend for [warehouse-client](https://github.com/tolikcode/warehouse-client.git
  3. `go mod download`
  4. `go run .`
 
+ To update swagger documentation run `swag init` (uses [swaggo](https://github.com/swaggo/swag))
+
 
  ## TODO
  - Add unit tests
@@ -25,6 +27,6 @@ Backend for [warehouse-client](https://github.com/tolikcode/warehouse-client.git
  - Add caching if a lot of requests are expected
  - If large inventory.json and products.json are expected, then process them asynchronously (with 201 Accepted etc)
  - Don't know yet how GORM (ORM used in the project) handles db connections. Research to make sure connections are pooled and reopened if closed
- - Api versioning. Fix bugs and edge cases :) 
+ - Api versioning. Fix bugs and handle edge cases :) 
  
 
