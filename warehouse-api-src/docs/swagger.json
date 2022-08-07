@@ -1,0 +1,81 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Warehouse API",
+        "contact": {}
+    },
+    "paths": {
+        "/articles": {
+            "get": {
+                "tags": [
+                    "articles"
+                ],
+                "summary": "Returns all articles",
+                "responses": {}
+            },
+            "patch": {
+                "tags": [
+                    "articles"
+                ],
+                "summary": "Updates inventory (articles)",
+                "parameters": [
+                    {
+                        "description": "articles",
+                        "name": "articles",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/products": {
+            "get": {
+                "tags": [
+                    "products"
+                ],
+                "summary": "Returns all products",
+                "responses": {}
+            },
+            "patch": {
+                "tags": [
+                    "products"
+                ],
+                "summary": "Updates product definitions",
+                "parameters": [
+                    {
+                        "description": "products",
+                        "name": "products",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/products/{id}/sale": {
+            "post": {
+                "tags": [
+                    "products"
+                ],
+                "summary": "Sells one specified product",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Product ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    }
+}

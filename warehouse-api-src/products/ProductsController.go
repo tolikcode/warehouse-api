@@ -33,6 +33,9 @@ type ProductDto struct {
 	Quantity int       `json:"quantity"`
 }
 
+// @Summary      Returns all products
+// @Tags         products
+// @Router       /products [get]
 func GetProducts(c *gin.Context) {
 	var products []Product
 	err := db.DB.Model(&Product{}).Preload("ProductArticles.Article").Find(&products).Error
@@ -65,6 +68,10 @@ func GetProducts(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"data": productDtos})
 }
 
+// @Summary      Updates product definitions
+// @Tags         products
+// @Param products body string true "products"
+// @Router       /products [patch]
 func UpdateProducts(c *gin.Context) {
 	var productUpdates []ProductUpdateDto
 	if err := c.ShouldBindJSON(&productUpdates); err != nil {
@@ -107,6 +114,10 @@ func UpdateProducts(c *gin.Context) {
 	}
 }
 
+// @Summary      Sells one specified product
+// @Tags         products
+// @Param        id   path      string  true  "Product ID"
+// @Router       /products/{id}/sale [post]
 func SellProduct(c *gin.Context) {
 	var product Product
 	if err := db.DB.Where("ID = ?", c.Param("id")).Preload("ProductArticles.Article").First(&product).Error; err != nil {

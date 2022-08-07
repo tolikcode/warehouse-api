@@ -11,6 +11,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// @Summary      Returns all articles
+// @Tags         articles
+// @Router       /articles [get]
 func GetArticles(c *gin.Context) {
 	var articles []Article
 	db.DB.Find(&articles)
@@ -18,6 +21,10 @@ func GetArticles(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"data": articles})
 }
 
+// @Summary      Updates inventory (articles)
+// @Tags         articles
+// @Param articles body string true "articles"
+// @Router       /articles [patch]
 func UpdateArticles(c *gin.Context) {
 	var articlesUpdates []Article
 	if err := c.ShouldBindJSON(&articlesUpdates); err != nil {

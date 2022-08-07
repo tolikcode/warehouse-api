@@ -5,17 +5,26 @@ import (
 
 	"github.com/tolikcode/warehouse-api/articles"
 	"github.com/tolikcode/warehouse-api/db"
+	"github.com/tolikcode/warehouse-api/docs"
 	"github.com/tolikcode/warehouse-api/products"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
+
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
+// @title           Warehouse API
 func main() {
+	docs.SwaggerInfo.Host = "localhost:8080"
+
 	db.ConnectDatabase()
 	db.DB.AutoMigrate(&articles.Article{}, &products.Product{}, &products.ProductArticle{})
 
 	r := gin.Default()
+
+	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	config := cors.DefaultConfig()
 	config.AllowOrigins = []string{"http://localhost:3000"}

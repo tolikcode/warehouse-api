@@ -1,0 +1,53 @@
+info:
+  contact: {}
+  title: Warehouse API
+paths:
+  /articles:
+    get:
+      responses: {}
+      summary: Returns all articles
+      tags:
+      - articles
+    patch:
+      parameters:
+      - description: articles
+        in: body
+        name: articles
+        required: true
+        schema:
+          type: string
+      responses: {}
+      summary: Updates inventory (articles)
+      tags:
+      - articles
+  /products:
+    get:
+      responses: {}
+      summary: Returns all products
+      tags:
+      - products
+    patch:
+      parameters:
+      - description: products
+        in: body
+        name: products
+        required: true
+        schema:
+          type: string
+      responses: {}
+      summary: Updates product definitions
+      tags:
+      - products
+  /products/{id}/sale:
+    post:
+      parameters:
+      - description: Product ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses: {}
+      summary: Sells one specified product
+      tags:
+      - products
+swagger: "2.0"
