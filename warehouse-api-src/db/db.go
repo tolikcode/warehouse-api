@@ -24,7 +24,7 @@ func ConnectDatabase() {
 		},
 	)
 
-	dsn := "host=localhost user=postgres password=1qaz2wsx dbname=warehouse2"
+	dsn := "host=localhost user=postgres password=YOUR_PASSWORD dbname=warehousedb"
 
 	database, err := gorm.Open(postgres.Open(dsn), &gorm.Config{
 		Logger: newLogger,

@@ -20,6 +20,7 @@ Backend for [warehouse-client](https://github.com/tolikcode/warehouse-client.git
  ## TODO
  - Add unit tests
  - To accomplish previous step, it would be helpful to have explicit dependencies and DI. [wire](https://github.com/google/wire) looks like a good option with wiring at build time. Also might extract separate services from controllers.
+ - Add e2e tests
  - Add authentication
  - Finish infrastructure (add a database cluster). Also I prefer to have infra in the same language as the application itself, so rewrite it in golang.
  - Create a deployment script (with `docker build`, `docker push`, `cdk deploy` etc). Add github action for build and deploy
@@ -27,6 +28,10 @@ Backend for [warehouse-client](https://github.com/tolikcode/warehouse-client.git
  - Add caching if a lot of requests are expected
  - If large inventory.json and products.json are expected, then process them asynchronously (with 201 Accepted etc)
  - Don't know yet how GORM (ORM used in the project) handles db connections. Research to make sure connections are pooled and reopened if closed
- - Api versioning. Fix bugs and handle edge cases :) 
+ - Setup monitoring and alerts (if this were a real production environment)
+ - Add [Architectural Decision Records](https://adr.github.io/)
+ - Fix bugs and handle edge cases :) 
+
+  See [warehouse-client](https://github.com/tolikcode/warehouse-client.git) for more TODOs
  
 
