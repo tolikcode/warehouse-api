@@ -14,7 +14,8 @@ Backend for [warehouse-client](https://github.com/tolikcode/warehouse-client.git
  3. `go mod download`
  4. `go run .`
 
- To update swagger documentation run `swag init` (uses [swaggo](https://github.com/swaggo/swag))
+After the API is started, swagger documentation can be accessed at http://localhost:8080/swagger/index.html
+To update swagger documentation run `swag init` (uses [swaggo](https://github.com/swaggo/swag))
 
 
  ## TODO
